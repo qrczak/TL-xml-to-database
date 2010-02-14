@@ -29,6 +29,6 @@
 /**
  * Cron jobs
  */
-$GLOBALS['TL_CRON']['daily'][] = array('XmlToDb', 'fetchXmlFile');
+$GLOBALS['TL_CRON']['daily'][] = array('XmlToDb', 'insertData');
  
 ?>
