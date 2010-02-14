@@ -37,7 +37,6 @@ $GLOBALS['TL_DCA']['tl_xmltodb'] = array
 	'config' => array
 	(
 		'dataContainer'               => 'Table',
-		'enableVersioning'            => true
 	),
 
 	// List
