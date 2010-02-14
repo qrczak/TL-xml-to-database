@@ -37,20 +37,47 @@
  */
 class XmlToDb extends Frontend
 {
+  
+  /**
+   * Clear XmlToDb table and put the fresh data
+   * @param array
+   */
+  public function insertData()
+  {
+    // Fetch xml file
+    $objXml = $this->fetchXmlFile();
+    
+    // Parse data
+    $arrData = $this->parseXml($objXml);
+    
+    // Insert to database
+    # ...
+  }     
+
   /**
    * Fetch remote xml file
    */     
   public function fetchXmlFile()
   {
-    //
+    // Get file
+    $file = 'http://someurl.com/wakacje.xml';
+    
+    // Load xml
+    $objXml = simplexml_load_file($file);
+  
+    return $objXml;    
   }
   
   /**
-   * Clear XmlToDb table and put the fresh data
+   * Parses xml data to ready-to-save array
+   * @param array
    */
-  public function insertData()
+  public function parseXml($objXml)
   {
-    //
+    // Prase object data to neat array
+    # ...
+    
+    return $arrData;
   }     
 }
 
