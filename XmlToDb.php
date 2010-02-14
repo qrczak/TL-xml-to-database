@@ -30,14 +30,13 @@
 /**
  * Class XmlToDb
  *
- * Provide methods to fetch remote xml files.
+ * Provide methods to fetch remote xml file and insert data to table.
  * @copyright  Kamil Kuzminski 2010, Marcin Lachowski 2010 
  * @author     Kamil Kuzminski <kamil.kuzminski@gmail.com>, Marcin Lachowski <qrczak@gmail.com> 
  * @package    Controller
  */
 class XmlToDb extends Frontend
 {
-
   /**
    * Fetch remote xml file
    */     
