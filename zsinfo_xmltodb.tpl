@@ -16,8 +16,10 @@ $xml = simplexml_load_file($file);
 echo $xml->hotel;
 echo '<br />';
 echo '<image src="'. $xml->images->thumb .'" alt="'. $xml->hotel .'"/>';
-
 ?>
+<?php foreach ($xml->images->pictures->picture as $field=>$data): ?>
+	<?php echo $data; ?><br />
+<?php endforeach; ?>
 <?php endforeach; ?>
 </div>
 
