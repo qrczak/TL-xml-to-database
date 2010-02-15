@@ -15,7 +15,7 @@ $xml = simplexml_load_file($file);
 
 echo $xml->hotel;
 echo '<br />';
-echo $xml->images->thumb;
+echo '<image src="'. $xml->images->thumb .'" alt="'. $xml->hotel .'"/>';
 
 ?>
 <?php endforeach; ?>
