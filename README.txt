@@ -1,0 +1,1 @@
+zsinfo_xmltodb.tpl and zslist_xmltodb.tpl you have to move to templates folder in root folder of your installation
