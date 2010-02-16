@@ -78,7 +78,44 @@ class XmlToDb extends Frontend
     # ...
     
     return $arrData;
-  }     
+  }
+
+  /**
+   * Clear XmlToDb table and put the fresh data
+   * @param array
+   */
+  private function getXMLfiles()
+  {
+    // tworzymy plik we wczesniej utworzonym katalogu system/xml/ ktory musi miec prawa zapisu
+	$datawyj = strtotime("now");
+    $archiveXml = 'system/xml/' . date("dmY", $datawyj);
+    
+	// Download the archive
+	if (!file_exists(TL_ROOT . '/' . $archiveXml))
+	{
+		$objRequest = new Request();
+		//na razie zostawiam to tak bo nie wiem jak dokladnie bedzie wygladal url do tego pliku
+		$objRequest->send('http://www.url.com/zip/. '$login' ./. '$pass' ./ALFA');
+
+		$objFile = new File($archiveXml);
+		$objFile->write($objRequest->response);
+		$objFile->close();
+	}
+	
+	//czytamy zipa
+	$objArchive = new ZipReader($archiveXml);
+	
+	//lista plikow w zipie
+	$arrFiles = $objArchive->getFileList();
+	array_shift($arrFiles);
+	
+    // Parse data
+    $arrData = $this->parseXml($arrFiles);
+    
+    // Insert to database
+    # ...
+  }   
+
 }
 
 ?>
