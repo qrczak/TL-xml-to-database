@@ -7,7 +7,16 @@
 -- *                                                        *
 -- **********************************************************
 
-
+-- *	priceList - prefix: pl
+-- *	trip - prefix: tr
+-- *	Hotele - prefix: h
+-- *	Price - prefix: p
+-- *	flight - prefix: f
+-- *	departure (dla ofert samolotowych) - prefix: fdep
+-- *	destination (dla ofert samolotowych) - prefix: fdes
+-- *	bus - prefix: b
+-- *	departure (dla ofert autobusowych) - prefix: bdep
+-- *	destination (dla ofert autobusowych) - prefix: bdes
 -- --------------------------------------------------------
 
 -- 
@@ -17,19 +26,12 @@
 CREATE TABLE `tl_xmltodb` (
 	`id` int(10) unsigned NOT NULL auto_increment,
 	`tstamp` int(10) unsigned NOT NULL default '0',
-	//priceList
 	`plTourOperator` varchar(64) NOT NULL default '',
 	`plPriceType` varchar(64) NOT NULL default '',
-	
-	//trip
 	`trDate` - czy datê bêdziemy konwertowaæ do unix timestamp?
 	`trPeriod` varchar(64) NOT NULL default '',
 	`trCatalog` varchar(64) NOT NULL default '',
 	`trId` varchar(64) NOT NULL default '',
-
-
-
-	//Hotele
 	`hCode` varchar(64) NOT NULL default '',
 	`hDestCode` varchar(64) NOT NULL default '',
 	`hCity` varchar(64) NOT NULL default '',
@@ -48,64 +50,50 @@ CREATE TABLE `tl_xmltodb` (
 	`hMaxPersons` smallint(5) unsigned NOT NULL default '0',
 	`hDefPersons` smallint(5) unsigned NOT NULL default '0',
 	`hHMCode` varchar(64) NOT NULL default '',
-
-	//Price
 	`pAdult` varchar(64) NOT NULL default '',
 	`pCurrency` varchar(64) NOT NULL default '',
 	`pChild` varchar(64) NOT NULL default '',
 	`pAgeFrom` smallint(5) unsigned NOT NULL default '0',
 	`pAgeTo` smallint(5) unsigned NOT NULL default '0',
-
-	//flight
 	`fAirlineCode` varchar(64) NOT NULL default '',
 	`fAirlineDesc` varchar(64) NOT NULL default '',
 	`fFlightNr` varchar(64) NOT NULL default '',
 	`fFMCode` varchar(64) NOT NULL default '',
-
-	//departure (dla ofert samolotowych)
 	`fdepCode` varchar(64) NOT NULL default '',
 	`fdepDescription` varchar(64) NOT NULL default '',
 	`fdepFCode` varchar(64) NOT NULL default '',
-	`fdepDepDate`
-	`fdepDepTime`
-	`fdepArrDate`
-	`fdepArrTime`
+	`fdepDepDate` int(10) unsigned NOT NULL default '0',
+	`fdepDepTime` int(10) unsigned NOT NULL default '0',
+	`fdepArrDate` int(10) unsigned NOT NULL default '0',
+	`fdepArrTime` int(10) unsigned NOT NULL default '0',
 	`fdepRetCode` varchar(64) NOT NULL default '',
-
-	//destination (dla ofert samolotowych)
 	`fdesCode` varchar(64) NOT NULL default '',
 	`fdesDescription` varchar(64) NOT NULL default '',
-	`fdesDepDate`
-	`fdesDepTime`
-	`fdesArrDate`
-	`fdesArrTime`
+	`fdesDepDate` int(10) unsigned NOT NULL default '0',
+	`fdesDepTime` int(10) unsigned NOT NULL default '0',
+	`fdesArrDate` int(10) unsigned NOT NULL default '0',
+	`fdesArrTime` int(10) unsigned NOT NULL default '0',
 	`fdesRetCode` varchar(64) NOT NULL default '',
-
-	//bus
 	`bDestination` varchar(64) NOT NULL default '',
 	`bDestinationDesc` varchar(64) NOT NULL default '',
 	`bTripCode` varchar(64) NOT NULL default '',
 	`bBMCode` varchar(64) NOT NULL default '',
-
-	//departure (dla ofert autobusowych)
 	`bdepCity` varchar(64) NOT NULL default '',
 	`bdepCityDesc` varchar(64) NOT NULL default '',
 	`bdepStop` varchar(64) NOT NULL default '',
 	`bdepStopDesc` varchar(64) NOT NULL default '',
-	`bdepDepDate`
-	`bdepDepTime`
-	`bdepArrDate`
-	`bdepArrTime`
+	`bdepDepDate` int(10) unsigned NOT NULL default '0',
+	`bdepDepTime` int(10) unsigned NOT NULL default '0',
+	`bdepArrDate` int(10) unsigned NOT NULL default '0',
+	`bdepArrTime` int(10) unsigned NOT NULL default '0',
 	`bdepBaseBusStop` varchar(64) NOT NULL default '',
-
-	//destination (dla ofert autobusowych)
 	`bdesCity` varchar(64) NOT NULL default '',
 	`bdesCityDesc` varchar(64) NOT NULL default '',
 	`bdesStop` varchar(64) NOT NULL default '',
 	`bdesStopDesc` varchar(64) NOT NULL default '',
-	`bdesDepDate`
-	`bdesDepTime`
-	`bdesArrDate`
-	`bdesArrTime`
+	`bdesDepDate` int(10) unsigned NOT NULL default '0',
+	`bdesDepTime` int(10) unsigned NOT NULL default '0',
+	`bdesArrDate` int(10) unsigned NOT NULL default '0',
+	`bdesArrTime` int(10) unsigned NOT NULL default '0',
   PRIMARY KEY  (`id`),
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
